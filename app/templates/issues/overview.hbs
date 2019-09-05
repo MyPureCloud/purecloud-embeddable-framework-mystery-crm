@@ -1,0 +1,23 @@
+<span class='title'>Issues</span>
+<span class='add' {{action 'openAddIssue'}}><i class="fa fa-plus clickable"></i></span>
+<div class='issues base'>
+    <div class='fixtable-container'>
+          {{fixtable-grid 
+            tableClass='table-hover'
+            columns=columnDefs 
+            content=issues
+            clicked=(action "clicked")
+          }}
+    </div>
+</div>
+
+{{#generic-Modal submit=(action 'addIssue') save=true open=formOpen title='Create An Issue'}}
+  <div class='user-attributes'>
+    <div class='attribute'>
+        {{input type="text" value=newIssue.title size="50" placeholder='Title'}}
+    </div>
+    <div class='attribute'>
+        {{input type="text" value=newIssue.description size="50" placeholder='Description'}}
+    </div>
+  </div>
+{{/generic-Modal}}

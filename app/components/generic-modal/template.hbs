@@ -1,0 +1,17 @@
+<div class='modal {{if open 'open'}}'>
+    {{#if showModal}}
+       <span class='clickable close' {{action 'close'}}><i class="fa fa-times "></i></span>
+        <div>
+            <div class='title'>
+                <span>{{title}}</span>
+            </div>
+            {{yield}}
+
+            <div class='actions'>
+                {{#if save}}
+                    <span class='save clickable' {{action 'save'}}>Save</span>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+</div>

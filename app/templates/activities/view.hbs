@@ -1,0 +1,42 @@
+<div class='breadcrums'>
+    {{#link-to 'activities.overview'}}<span class='title'>&lt;- Activities</span>{{/link-to}}
+</div>
+
+<div class='activity-details content'>
+    <h2>{{model.subject}}</h2>
+    <div class='attribute'>
+        <span class='label'>Created Date:</span> <span>{{date}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Direction:</span> <span>{{model.direction}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>InteractionId:</span> <span>{{model.interactionId}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Flagged:</span> <span>{{model.flagged}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>QueueName:</span> <span>{{model.queueName}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Duration:</span> <span>{{model.duration}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Campaign ID:</span> <span>{{model.campaign}}</span>
+    </div>
+    {{#if model.relatedId}}
+    <div class='attribute'>
+       <span class='label'>Related Issue:</span> <span>{{#link-to 'issues.view' relatedIssue.id}}{{relatedIssue.title}}{{/link-to}}</span>
+    </div>
+     {{/if}}
+    {{#if model.contactId}}
+    <div class='attribute'>
+        <span class='label'>Related Contact:</span> <span>{{#link-to 'users.view' relatedContact.id}}{{relatedContact.firstName}} {{relatedContact.lastName}}{{/link-to}}</span>
+    </div>
+    {{/if}}
+    <div class='attribute'>
+        <span class='label'>Notes:</span> <span>{{model.notes}}</span>
+    </div>
+
+</div>

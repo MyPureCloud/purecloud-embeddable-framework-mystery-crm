@@ -1,0 +1,117 @@
+@import 'ember-power-select';
+@import 'pod-styles';
+@import 'app/components/global-sidebar/style.less';
+@import 'app/components/generic-modal/style.less';
+@import 'app/components/top-bar/style.less';
+@import 'app/components/cti-settings/style.less';
+@import 'app/components/cti-container/style.less';
+@import 'app/components/recent-activities/style.less';
+@import 'app/components/recent-issues/style.less';
+
+body{
+    margin: 0;
+    background: #DAD5DD;
+    height:100vh;
+    overflow: hidden;
+
+    .main {
+        height: 100%;
+        display: flex;
+
+        .center-stage{
+            margin: 15px 0px 0px 15px;
+            width: 100%;
+            height: calc(~"100% - 80px");
+            overflow: auto;
+            .breadcrums{
+                margin-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+            .title {
+                font-size: 1.5em;
+            }
+            .add {
+                    right: 5px;
+                    font-size: 1.5em;
+                    position: absolute;
+            }
+            .base {
+                .fixtable-container{
+                    margin-top: 30px;
+                    padding-left: 35px;
+                    padding-right: 35px;
+                }
+            }
+            
+            .content {
+                margin-top: 30px;
+                margin-left: 35px;
+                margin-right: 35px;
+                padding-left: 15px;
+                height: 80%;
+                border-radius: 5px;
+                overflow: hidden;
+                border-style: solid !important;
+                border-width: 2px !important;
+                border-color: #bb5c37 !important;
+
+                .attribute {
+                    font-size:1.25em;
+                    .label{
+                        font-size: 1em;
+                        opacity: .5;
+                    }
+                }
+            }
+            .issue-details{
+                .complete {
+                    float: right;
+                    background: #4b0055;
+                    color: #dad5dd;
+                    padding: 10px;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+
+body > .ember-view {
+    height:100%;
+}
+
+.fixtable{
+    min-height: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-style: solid !important;
+    border-width: 2px !important;
+    border-color: #bb5c37 !important;
+
+    .fixtable-header{
+        background:#bb5c37;
+    }
+    th > div > span {
+        color: #DAD5DD;
+    }
+
+    td > span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center{
+        div {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+}
+.clickable{
+    cursor: pointer;
+}

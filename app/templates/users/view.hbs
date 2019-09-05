@@ -1,0 +1,22 @@
+<div class='breadcrums'>
+    {{#link-to 'users.overview'}}<span class='title'>&lt;- Contacts</span>{{/link-to}}
+</div>
+
+<div class='user-details content'>
+    <h2>{{name}}</h2>
+    <div class='attribute'>
+        <span class='label'>Address:</span> <span>{{model.address}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>PhoneNumber:</span> <span>{{model.phoneNumber}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Email:</span> <span>{{model.email}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Company:</span> <span>{{model.company}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Member Since:</span> <span>{{memberSince}}</span>
+    </div>
+</div>
