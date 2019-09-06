@@ -20,7 +20,7 @@ for(var i = 0; i < segments.length; i++){
 var callLogMapping={};
 
 function setupFramework(parentSettings){
-    console.log("Initilizing Framework with the following settings", parentSettings);
+    // console.log("Initilizing Framework with the following settings", parentSettings);
     window.Framework = {
         config: {
             name:parentSettings.name,
@@ -51,7 +51,7 @@ function setupFramework(parentSettings){
             ]);
         },
         screenPop: function (searchString, interaction) {
-            console.error('ERROR', searchString, interaction);
+            // console.error('ERROR', searchString, interaction);
             window.parent.postMessage(JSON.stringify({type:"screenPop", data:{searchString:searchString, interaction:interaction}}) , parentDomain);
         },
         processCallLog: function (callLog, interaction, eventName, onSuccess, onFailure) {
@@ -87,10 +87,10 @@ window.addEventListener("message", function(event){
                         id:message.callLogId
                     });
                 }
-                console.log('###### payload', message);
+                // console.log('###### payload', message);
             }
         }
     }catch(error){
-        console.log('Unable to parse message: ', event);
+        // console.log('Unable to parse message: ', event);
     }
 });

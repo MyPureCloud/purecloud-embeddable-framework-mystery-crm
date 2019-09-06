@@ -7,7 +7,7 @@ export default Service.extend({
         this._super(...arguments);
         this.getUsers().then((data)=>{
             if(data.get('length') == 0){
-                console.log('Pre-populating date if none is found');
+                // console.log('Pre-populating date if none is found');
                 this.get('store').createRecord('user', {firstName:"Samson", lastName:"Blackstone", createdDate: Date.now(), address: "Blackstone's Circus", phoneNumber:"317-555-1234", company:"Blackstone's circus", email: "s.blackstone@circus.com"}).save();
                 this.get('store').createRecord('user', {firstName:"Miner", lastName:"Forty-Niner", createdDate: Date.now(), address: "Gold City Guest Ranch", phoneNumber:"317-555-9831", company:"Gold City Guest Ranch", email: "miner.49@goldcityranch.com"}).save();
                 this.get('store').createRecord('user', {firstName:"Zeb", lastName:"Perkins", createdDate: Date.now(), address: "Riverboat Swamp", phoneNumber:"317-555-0113", company:"Sunken Riverboat", email: "zeb.perkins@sunkenriverboad.com"}).save();

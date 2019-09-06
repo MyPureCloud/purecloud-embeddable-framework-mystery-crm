@@ -7,7 +7,7 @@ export default Service.extend({
         this._super(...arguments);
         this.getIssues().then((data)=>{
             if(data.get('length') == 0){
-                console.log('Pre-populating date if none is found');
+                // console.log('Pre-populating date if none is found');
                 this.get('store').createRecord('issue', {title:'Uncle Stuart is missing!', description:'Sharons Uncle Stuart disappears, and when they find him, he says he was beckoned by the voice of the Ghost of Elias Kingston from the Kingston Mansion. The gang find themselves wrapped up in the tangle of the spooky ghoul of Elias Kingston who wants the family treasure', createdDate: Date.now(), status: 'Open'}).save();
                 this.get('store').createRecord('issue', {title:'Haunted Air Filed', description:'A mysterious aircraft appears and lands behind some trees, and out of it comes a mysterious ghost which releases a maniacal laugh.', createdDate: Date.now(), status: 'Open'}).save();
                 this.get('store').createRecord('issue', {title:'When does the theme park open?', description:'I anticipate the opening of a theme park while clam collecting on a nearby beach. But when the theme parks lights come on and the rides start running, when the park is supposed to be closed, I investigated it but was ran off by a strange man who looks like a walking torpedo.', createdDate: Date.now(), status: 'Open'}).save();
