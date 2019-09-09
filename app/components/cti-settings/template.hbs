@@ -4,29 +4,29 @@
         <span class='group-title'>CTI Settings</span>
         <div class='settings-group'>
              <div class='setting env'>
-                <span>Deployment Env:</span>
+                <span>Deployment Environment:</span>
                 {{#power-select selected=settings.env options=envs onchange=(action "updateEnv") as |env|}}
                     {{env.name}}
                 {{/power-select}}
             </div>
             <div class='setting'>
-                <span>Framework Name:</span>
+                <span>Framework Name</span>
                 {{input type="text" value=settings.frameworkName size="50"}}
             </div>
         </div>
         <div class='settings-group'>
             <div class='header'><span>Login</span></div>
             <div class='setting'>
-                <span>Advance SSO</span>
+                <span>SSO</span>
                 {{input type="checkbox" name="setting-sso" checked=settings.advanceSSO}}
             </div>
             <div class='conditional {{if settings.advanceSSO 'show' 'hide'}}' >
                 <div class='setting'>
-                    <span>SSO Provider:</span>
+                    <span>SSO Identity Provider Name:</span>
                     {{input type="text" value=settings.sso.provider size="50"}}
                 </div>
                 <div class='setting'>
-                    <span>SSO Org Name:</span>
+                    <span>PureCloud Organization Name:</span>
                     {{input type="text" value=settings.sso.orgName size="50"}}
                 </div>
             </div>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class='settings-group'>
-            <div class='header'><span>Misc. Settings</span></div>
+            <div class='header'><span>Miscellaneous Settings</span></div>
             <div class='setting'>
                 <span>embedWebRTCByDefault</span>
                 {{input type="checkbox" name="setting-embedWebRTCByDefault" checked=settings.embedWebRTCByDefault}}
@@ -72,7 +72,7 @@
                 {{input type="checkbox" name="setting-embeddedInteractionWindow" checked=settings.embeddedInteractionWindow}}
             </div>
             <div class='setting'>
-                <span>enableConfigurableCallerID</span>
+                <span>enableConfigurableCallerId</span>
                 {{input type="checkbox" name="setting-enableConfigurableCallerID" checked=settings.enableConfigurableCallerID}}
             </div>
             <div class='setting'>
@@ -102,15 +102,11 @@
         <div class='settings-group'>
             <div class='header'><span>ClientIds</span></div>
             <div class='setting'>
-                <span>ClientId for Private Embeddable Framework</span>
-                {{input type="checkbox" name="setting-privateEmbeddableFrameworkClientId" checked=settings.privateEmbeddableFrameworkClientId}}
-            </div>
-            <div class='setting'>
-                <span>Purecloud ENV</span>
+                <span>PureCloud Environment</span>
                 {{input type="text" value=settings.clientIds.purecloudEnv size="50"}}
             </div>
             <div class='setting'>
-                <span>Purecloud ClientId</span>
+                <span>PureCloud Client ID</span>
                 {{input type="text" value=settings.clientIds.clientId size="50"}}
             </div>
         </div>

@@ -6,7 +6,7 @@ export default Component.extend({
     settings: Ember.computed.alias('ctiSettingsService.settings'),
     envs: [
         { name:'Local', key:'local'},
-        { name:'Priavate Embeddable Framework', key:'ppef'},
+        { name:'Private', key:'ppef'},
         { name:'Production', key:'pef'}
     ],
     classNames: ['cti-settings'],
