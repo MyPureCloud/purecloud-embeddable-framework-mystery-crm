@@ -12,7 +12,7 @@ export default Service.extend({
     isDetailsWindowVisible: false,
     phoneURL: Ember.computed('ctiSettingsService.settings.env', function(){
         let env = this.get('ctiSettingsService.settings.env');
-        let region = this.get('ctiSettingsService.settings.clientIds.purecloudEnv');
+        let region = this.getRegion();
         let domain = window.location.origin;
         if(!env){
             env = {};
@@ -29,7 +29,7 @@ export default Service.extend({
     }),
     detailsWindowURL: Ember.computed('ctiSettingsService.settings.env', function(){
         let env = this.get('ctiSettingsService.settings.env');
-        let region = this.get('ctiSettingsService.settings.clientIds.purecloudEnv');
+        let region = this.getRegion();
         if(!env){
             env = {};
         }
@@ -73,7 +73,8 @@ export default Service.extend({
                 provider: this.get('ctiSettingsService.settings.sso.provider')
             };
         }
-        payload.clientIds[this.get('ctiSettingsService.settings.clientIds.purecloudEnv')] =this.get('ctiSettingsService.settings.clientIds.clientId')
+        let region = this.getRegion();
+        payload.clientIds[region] =this.get('ctiSettingsService.settings.clientIds.clientId')
         this.postMessageToCTI(payload);
     },
     isPhoneVisible:false,
@@ -119,6 +120,16 @@ export default Service.extend({
                 }
             }
         });
+    },
+    getRegion: function () {
+        let region = this.get('ctiSettingsService.settings.clientIds.purecloudEnv');
+        if (region) {
+            let appsIndex = region.toLowerCase().indexOf('apps.');
+            if (appsIndex > -1) {
+                region = region.substr(appsIndex + 'apps.'.length);
+            }
+        }
+        return region;
     },
     postMessageToCTI: function(payload){
         if(payload){
