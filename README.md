@@ -44,11 +44,11 @@ You can now interact with the PureCloud Embeddable Framework application.
 ## Configuration
 
 1. Run a local server.
-  * Windows<br />
+   * Windows<br />
       a. Run **Command Prompt** as an administrator.<br />
       b. Type `cd {name of your PureCloud Embeddable Framework project}`.<br />
       c. Type `ember serve --port 443`.
-  * macOS<br />
+   * macOS<br />
       a. Open a **Terminal** window.<br />
       b. Type `cd {name of your PureCloud Embeddable Framework project}`.<br />
       c. Type `sudo ember serve --port 443`.
