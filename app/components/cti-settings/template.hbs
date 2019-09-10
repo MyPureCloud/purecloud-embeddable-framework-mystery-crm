@@ -4,7 +4,7 @@
         <span class='group-title'>CTI Settings</span>
         <div class='settings-group'>
              <div class='setting env'>
-                <span>Deployment Environment:</span>
+                <span>Deployment Environment</span>
                 {{#power-select selected=settings.env options=envs onchange=(action "updateEnv") as |env|}}
                     {{env.name}}
                 {{/power-select}}
@@ -22,11 +22,11 @@
             </div>
             <div class='conditional {{if settings.advanceSSO 'show' 'hide'}}' >
                 <div class='setting'>
-                    <span>SSO Identity Provider Name:</span>
+                    <span>SSO Identity Provider Name</span>
                     {{input type="text" value=settings.sso.provider size="50"}}
                 </div>
                 <div class='setting'>
-                    <span>PureCloud Organization Name:</span>
+                    <span>PureCloud Organization Name</span>
                     {{input type="text" value=settings.sso.orgName size="50"}}
                 </div>
             </div>
