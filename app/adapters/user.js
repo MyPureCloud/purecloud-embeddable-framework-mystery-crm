@@ -26,7 +26,7 @@ export default DS.RESTAdapter.extend({
     },
     deleteRecord: function(store, type, snapshot){
         let currentUsers = JSON.parse(window.localStorage.getItem('users'));
-        if(currentUsers && currentUsers.users && currentUsers.users){
+        if(currentUsers && currentUsers.users){
             for(let i=0; i < currentUsers.users.length; i++){
                 if(currentUsers.users[i].id == snapshot.id){
                     currentUsers.users.removeObject(currentUsers.users[i]);
@@ -40,7 +40,7 @@ export default DS.RESTAdapter.extend({
     findRecord: function(store, type, id){
         return new Ember.RSVP.Promise(function (resolve) {
             let currentUsers = JSON.parse(window.localStorage.getItem('users'));
-            if(currentUsers && currentUsers.users && currentUsers.users){
+            if(currentUsers && currentUsers.users){
                 for(let i=0; i < currentUsers.users.length; i++){
                     if(currentUsers.users[i].id == id){
                         resolve({user:currentUsers.users[i]});

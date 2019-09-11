@@ -15,7 +15,7 @@ export default DS.RESTAdapter.extend({
         let currentActivities = JSON.parse(window.localStorage.getItem('activities'));
         let record = store.serializerFor(type.modelName).serialize(snapshot);
         record.id = snapshot.record.id;
-        if(currentActivities && currentActivities.activities && currentActivities.activities){
+        if(currentActivities && currentActivities.activities){
             for(let i=0; i < currentActivities.activities.length; i++){
                 if(currentActivities.activities[i].id == snapshot.record.id){
                     currentActivities.activities[i] = record;
@@ -41,7 +41,7 @@ export default DS.RESTAdapter.extend({
     },
     deleteRecord: function(store, type, snapshot){
         let currentActivities = JSON.parse(window.localStorage.getItem('activities'));
-        if(currentActivities && currentActivities.activities && currentActivities.activities){
+        if(currentActivities && currentActivities.activities){
             for(let i=0; i < currentActivities.activities.length; i++){
                 if(currentActivities.activities[i].id == snapshot.id){
                     currentActivities.activities.removeObject(currentActivities.activities[i]);
@@ -55,7 +55,7 @@ export default DS.RESTAdapter.extend({
     findRecord: function(store, type, id){
         return new Ember.RSVP.Promise(function (resolve) {
             let currentActivities = JSON.parse(window.localStorage.getItem('activities'));
-            if(currentActivities && currentActivities.activities && currentActivities.activities){
+            if(currentActivities && currentActivities.activities){
                 for(let i=0; i < currentActivities.activities.length; i++){
                     if(currentActivities.activities[i].id == id){
                         resolve({activity:currentActivities.activities[i]});

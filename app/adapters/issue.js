@@ -15,7 +15,7 @@ export default DS.RESTAdapter.extend({
         let currentIssues = JSON.parse(window.localStorage.getItem('issues'));
         let record = store.serializerFor(type.modelName).serialize(snapshot);
         record.id = snapshot.record.id;
-        if(currentIssues && currentIssues.issues && currentIssues.issues){
+        if(currentIssues && currentIssues.issues){
             for(let i=0; i < currentIssues.issues.length; i++){
                 if(currentIssues.issues[i].id == snapshot.record.id){
                     currentIssues.issues[i] = record;
@@ -41,7 +41,7 @@ export default DS.RESTAdapter.extend({
     },
     deleteRecord: function(store, type, snapshot){
         let currentIssues = JSON.parse(window.localStorage.getItem('issues'));
-        if(currentIssues && currentIssues.issues && currentIssues.issues){
+        if(currentIssues && currentIssues.issues){
             for(let i=0; i < currentIssues.issues.length; i++){
                 if(currentIssues.issues[i].id == snapshot.id){
                     currentIssues.issues.removeObject(currentIssues.issues[i]);
@@ -55,7 +55,7 @@ export default DS.RESTAdapter.extend({
     findRecord: function(store, type, id){
         return new Ember.RSVP.Promise(function (resolve) {
             let currentIssues = JSON.parse(window.localStorage.getItem('issues'));
-            if(currentIssues && currentIssues.issues && currentIssues.issues){
+            if(currentIssues && currentIssues.issues){
                 for(let i=0; i < currentIssues.issues.length; i++){
                     if(currentIssues.issues[i].id == id){
                         resolve({issue:currentIssues.issues[i]});
