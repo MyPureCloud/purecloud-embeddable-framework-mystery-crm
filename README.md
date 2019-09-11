@@ -59,7 +59,7 @@ You can now interact with the PureCloud Embeddable Framework application.
       * **Deployment Environment**: Select the correct PureCloud Embeddable Framework deployment environment for your integration.
       * **Framework Name**: Add a unique name for your integration.
       * **PureCloud Environment**: Indicate the region where your PureCloud organization is located. <br />
-      For a list of values, see property names under [clientIds](https://developer.mypurecloud.com/api/embeddable-framework/configMethods/clientIds.html).
+      For a list of values, see property names under [clientIds (Developer Center)](https://developer.mypurecloud.com/api/embeddable-framework/configMethods/clientIds.html).
       * **PureCloud Client ID**: Add the Client ID from the OAuth client that you created in PureCloud. <br /> For more information about the OAuth client, see [Prerequisites](#prerequisites).<br /></ul>
    c. (Optional) Edit the other fields. For more information about these fields, see the [PureCloud Embeddable Framework documentation](https://developer.mypurecloud.com/api/embeddable-framework/) in the Developer Center.<br />
    d. To save your changes, click the disk icon.<br />
