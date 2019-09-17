@@ -1,0 +1,60 @@
+.cti-container{
+   .phone {
+       span{
+            padding:5px 4px 5px 10px
+       }
+        width:250px;
+        height: 480px;
+        position: fixed;
+        left: 58px;
+        background: #4B0055;
+        color: #DAD5DD;
+        display: flex;
+        flex-direction: column;
+        
+        iframe{
+            width:100%;
+            height: 100%;
+            border: none;
+        }
+        transition: all ease .25s;
+        border-left: 4px solid #E7CDF5;
+   }
+   .phone.hide{
+       bottom: -500px;
+   }
+   .phone.show{
+       bottom: 0px;
+   }
+
+   .detailsWindow {
+        span{
+            padding:5px 4px 5px 10px
+        }
+        width:500px;
+        height: 600px;
+        position: fixed;
+        left: 313px;
+        background: #4B0055;
+        color: #DAD5DD;
+        display: flex;
+        flex-direction: column;
+     
+        iframe{
+            width:100%;
+            height: 100%;
+            border: none;
+        }
+        transition: all ease .25s;
+        border-left: 4px solid #E7CDF5;
+        .close {
+            float: right;
+        }
+    }
+    .detailsWindow.hide{
+        bottom: -700px;
+    }
+    .detailsWindow.show{
+        bottom: 0px;
+    }
+}

@@ -1,0 +1,114 @@
+<div>
+    <div class='outer-settings'>
+        <span class='save clickable' {{action 'saveSettings'}}><i class="fa fa-save "></i></span>
+        <span class='group-title'>CTI Settings</span>
+        <div class='settings-group'>
+             <div class='setting env'>
+                <span>Deployment Environment</span>
+                {{#power-select selected=settings.env options=envs onchange=(action "updateEnv") as |env|}}
+                    {{env.name}}
+                {{/power-select}}
+            </div>
+            <div class='setting'>
+                <span>Framework Name</span>
+                {{input type="text" value=settings.frameworkName size="50"}}
+            </div>
+        </div>
+        <div class='settings-group'>
+            <div class='header'><span>Login</span></div>
+            <div class='setting'>
+                <span>SSO</span>
+                {{input type="checkbox" name="setting-sso" checked=settings.advanceSSO}}
+            </div>
+            <div class='conditional {{if settings.advanceSSO 'show' 'hide'}}' >
+                <div class='setting'>
+                    <span>SSO Identity Provider Name</span>
+                    {{input type="text" value=settings.sso.provider size="50"}}
+                </div>
+                <div class='setting'>
+                    <span>PureCloud Organization Name</span>
+                    {{input type="text" value=settings.sso.orgName size="50"}}
+                </div>
+            </div>
+        </div>
+
+        <div class='settings-group'>
+            <div class='header'><span>Call Logging</span></div>
+            <div class='setting'>
+                <span>enableCallLogs</span>
+                {{input type="checkbox" name="setting-enableCallLogs" checked=settings.enableCallLogs}}
+            </div>
+            <div class='conditional {{if settings.enableCallLogs 'show' 'hide'}}' >
+                <div class='setting'>
+                    <span>hideCallLogSubject</span>
+                    {{input type="checkbox" name="setting-hideCallLogSubject" checked=settings.hideCallLogSubject}}
+                </div>
+                <div class='setting'>
+                    <span>hideCallLogContact</span>
+                    {{input type="checkbox" name="setting-hideCallLogContact" checked=settings.hideCallLogContact}}
+                </div>
+                <div class='setting'>
+                    <span>hideCallLogRelation</span>
+                    {{input type="checkbox" name="setting-hideCallLogRelation" checked=settings.hideCallLogRelation}}
+                </div>
+            </div>
+        </div>
+        <div class='settings-group'>
+            <div class='header'><span>Miscellaneous Settings</span></div>
+            <div class='setting'>
+                <span>embedWebRTCByDefault</span>
+                {{input type="checkbox" name="setting-embedWebRTCByDefault" checked=settings.embedWebRTCByDefault}}
+            </div>
+            <div class='setting'>
+                <span>hideWebRTCPopUpOption</span>
+                {{input type="checkbox" name="setting-hideWebRTCPopUpOption" checked=settings.hideWebRTCPopUpOption}}
+            </div>
+                <div class='setting'>
+                <span>enableTransferContext</span>
+                {{input type="checkbox" name="setting-enableTransferContext" checked=settings.enableTransferContext}}
+            </div>
+            <div class='setting'>
+                <span>embeddedInteractionWindow</span>
+                {{input type="checkbox" name="setting-embeddedInteractionWindow" checked=settings.embeddedInteractionWindow}}
+            </div>
+            <div class='setting'>
+                <span>enableConfigurableCallerId</span>
+                {{input type="checkbox" name="setting-enableConfigurableCallerID" checked=settings.enableConfigurableCallerID}}
+            </div>
+            <div class='setting'>
+                <span>enableServerSideLogging</span>
+                {{input type="checkbox" name="setting-enableServerSideLogging" checked=settings.enableServerSideLogging}}
+            </div>
+        </div>
+
+        <div class='settings-group'>
+            <div class='header'><span>UI Theme</span></div>
+            <div class='setting'>
+                <span>Custom Theme</span>
+                {{input type="checkbox" name="setting-customTheme" checked=settings.customTheme}}
+            </div>
+            <div class='conditional {{if settings.customTheme 'show' 'hide'}}' >
+                <div class='setting'>
+                    <span>Primary Color</span>
+                    {{input type="text" value=settings.theme.primary size="50"}}
+                </div>
+                <div class='setting'>
+                    <span>Secondary Color</span>
+                    {{input type="text" value=settings.theme.text size="50"}}
+                </div>
+            </div>
+        </div>
+
+        <div class='settings-group'>
+            <div class='header'><span>ClientIds</span></div>
+            <div class='setting'>
+                <span>PureCloud Environment</span>
+                {{input type="text" value=settings.clientIds.purecloudEnv size="50" placeholder="e.g., mypurecloud.com" }}
+            </div>
+            <div class='setting'>
+                <span>PureCloud Client ID</span>
+                {{input type="text" value=settings.clientIds.clientId size="50"}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class='breadcrums'>
+    {{#link-to 'issues.overview'}}<span class='title'>&lt;- Issues</span>{{/link-to}}
+</div>
+<div class='issue-details content'>
+    {{#if isOpen}}
+        <span class='complete clickable' {{action 'completeIssue'}}>Complete</span>
+    {{/if}}
+    <h2>{{model.title}}</h2>
+    <div class='attribute'>
+        <span class='label'>Created Date:</span> <span>{{date}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Status:</span> <span>{{model.status}}</span>
+    </div>
+    <div class='attribute'>
+        <span class='label'>Description:</span> <span>{{model.description}}</span>
+    </div>
+</div>

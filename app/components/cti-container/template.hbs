@@ -1,0 +1,13 @@
+<div class='outer'>
+    
+    <div class='phone {{if isPhoneVisible 'show' 'hide'}}'>
+        <span>PHONE</span>
+        <iframe id='cti' allow="camera *; microphone *; autoplay *" src={{ctiURL}}></iframe>
+    </div>
+    {{#if embedDetailsWindow}}
+    <div class='detailsWindow {{if isDetailsWindowVisible 'show' 'hide'}}'>
+        <span>INTERACTION DETAILS <i class="fa fa-times clickable close" {{action 'closeDetailWindow'}}></i></span>
+        <iframe id='cti' allow="camera *; microphone *; autoplay *" src={{detailWindowURL}}></iframe>
+    </div>
+    {{/if}}
+</div>
