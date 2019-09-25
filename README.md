@@ -52,7 +52,7 @@ You can now interact with the PureCloud Embeddable Framework application.
       a. Open a **Terminal** window.<br />
       b. Type `cd {name of your PureCloud Embeddable Framework project}`.<br />
       c. Type `sudo ember serve --port 443`.
-2. Wait until you see "Build successful...Serving on https://localhost:443/" in the Command Prompt/Terminal window
+2. Wait until you see "Build successful...Serving on https://localhost:443/" in the Command Prompt/Terminal window.
 3. In your browser, go to https://localhost:443.
 4. Configure the application.<br />
    a. Click the gear icon.<br />
