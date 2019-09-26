@@ -52,8 +52,9 @@ You can now interact with the PureCloud Embeddable Framework application.
       a. Open a **Terminal** window.<br />
       b. Type `cd {name of your PureCloud Embeddable Framework project}`.<br />
       c. Type `sudo ember serve --port 443`.
-2. In your browser, go to https://localhost:443.
-3. Configure the application.<br />
+2. Wait until you see "Build successful...Serving on https://localhost:443/" in the Command Prompt/Terminal window.
+3. In your browser, go to https://localhost:443.
+4. Configure the application.<br />
    a. Click the gear icon.<br />
    b. Edit the following required fields:
       * **Deployment Environment**: Select the correct PureCloud Embeddable Framework deployment environment for your integration.
@@ -63,7 +64,7 @@ You can now interact with the PureCloud Embeddable Framework application.
       * **PureCloud Client ID**: Add the Client ID from the OAuth client that you created in PureCloud. <br /> For more information about the OAuth client, see [Prerequisites](#prerequisites).<br /></ul>
    c. (Optional) Edit the other fields. For more information about these fields, see the [PureCloud Embeddable Framework documentation](https://developer.mypurecloud.com/api/embeddable-framework/) in the Developer Center.<br />
    d. To save your changes, click the disk icon.<br />
-4. Refresh your browser. The configuration changes now take effect.
+5. Refresh your browser. The configuration changes now take effect.
 
 
 ## Usage
