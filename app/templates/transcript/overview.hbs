@@ -1,8 +1,8 @@
-<span class='title'>Most Recent Customer Messages</span>
-<div class='transcript base'>
-    <ul class='transcript__list'>
-        {{#each messages}}
-            {{transcript-message}}
+<h2 class="title">Most Recent Customer Messages</h2>
+<div class="transcript base">
+    <ul class="transcript__list">
+        {{#each messages as |message|}}
+            {{transcript-message message=message}}
         {{/each}}
     </ul>
 </div>

@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default Controller.extend({
     transcriptService: Ember.inject.service(),
     ctiService: Ember.inject.service(),
-    test: 'yes',
+    savedMessages: [],
     maxMessages: 5,
     initialSet: false,
     init: function () {
@@ -12,41 +12,42 @@ export default Controller.extend({
 
         this.get('transcriptService').getMessages()
             .then((data) => {
-                this.set('messages', data);
+                this.messages = data;
             });
 
         window.addEventListener('message', (event) => {
           const data = JSON.parse(event.data);
 
           if (data.type === 'chatUpdate') {
-              this.handleMessages(data.data);
+              this.handleMessages(data.data, 'chat');
           }
       });
     },
-    handleMessages(newMessages) {
-      // If multiple messages already exist, ie refreshing in the middle of a chat, send most recent
-      if (!this.initialSet && newMessages.length > 1) {
-          this.manage(newMessages.filter((m) => m.role === 'customer'));
-      } else {
-          // Just send the most recent message
-          if (newMessages[newMessages.length - 1].role === 'customer') {
-              this.manage(newMessages[newMessages.length - 1]);
-          }
-      }
-    },
-    manage(message) {
-        // Manage multiple messages
-        if (Array.isArray(message)) {
-            message.forEach((el) => {
-                this.get('transcriptService').createMessage(el);
+    handleMessages(newMessages, type) {
+        // If multiple messages already exist, ie refreshing in the middle of a chat, send most recent
+        if (!this.initialSet && newMessages.length > 1) {
+            newMessages.filter((m) => m.role === 'customer').forEach((el) => {
+                el.type = type;
+                this.create(el);
             });
         } else {
-            // Manage one message
-            this.get('transcriptService').createMessage(message);
+            // Just send the most recent message
+            const last = newMessages[newMessages.length - 1];
+
+            if (last.role === 'customer') {
+                last.type = type;
+                this.create(last);
+            }
         }
 
         if (!this.initialSet) {
             this.initialSet = true;
+        }
+    },
+    create(message) {
+        if (!this.savedMessages.find((m) => m.body === message.body && m.type === message.type)) {
+            this.savedMessages.push(message);
+            this.get('transcriptService').createMessage(message);
         }
     },
 });

@@ -2,9 +2,10 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-    findAll: function(){
+    findAll: function() {
         return new Ember.RSVP.Promise(function (resolve) {
             let data = JSON.parse(window.localStorage.getItem('messages'));
+
             if(!data || data == "") {
                 data = {messages:[]};
             }
@@ -41,6 +42,7 @@ export default DS.RESTAdapter.extend({
         });
     },
     deleteRecord: function(store, type, snapshot){
+      console.log(snapshot.id);
         let currentMessages = JSON.parse(window.localStorage.getItem('messages'));
         if(currentMessages && currentMessages.messages){
             for(let i=0; i < currentMessages.messages.length; i++){
