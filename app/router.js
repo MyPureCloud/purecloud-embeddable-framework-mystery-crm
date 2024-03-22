@@ -23,6 +23,10 @@ Router.map(function() {
     this.route('overview', { path : '/'});
   });
 
+  this.route('transcript', { path: '/transcript' }, function() {
+    this.route('overview', { path : '/'});
+  });
+
   this.route('settings', { path: '/settings' });
 });
 
