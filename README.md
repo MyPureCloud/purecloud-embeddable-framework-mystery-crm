@@ -33,7 +33,7 @@ You can now interact with the PureCloud Embeddable Framework application.
  * Ember CLI installed on your computer.
  * PureCloud credentials.
  * A PureCloud OAuth client with the **Token Implicit Grant (Browser)** grant type selected.<br />
-   For more information, see [Create an OAuth client (Resource Center)](https://help.mypurecloud.com/?p=188023).
+   For more information, see [Create an OAuth client (Resource Center)](https://help.genesys.cloud/?p=188023).
 
 ## Installation
 
@@ -77,4 +77,4 @@ You can now interact with the application and explore functionality in a PureClo
 
 This content is [licensed](/LICENSE) under the MIT license.
 
-For more information about PureCloud Embeddable Framework, see [PureCloud Embeddable Framework overview (Developer Center)](https://developer.mypurecloud.com/api/embeddable-framework/) and [About PureCloud Embeddable Framework (Resource Center)](https://help.mypurecloud.com/?p=196909).
+For more information about PureCloud Embeddable Framework, see [PureCloud Embeddable Framework overview (Developer Center)](https://developer.mypurecloud.com/api/embeddable-framework/) and [About PureCloud Embeddable Framework (Resource Center)](https://help.genesys.cloud/?p=196909).
