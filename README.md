@@ -33,7 +33,7 @@ You can now interact with the PureCloud Embeddable Framework application.
  * Ember CLI installed on your computer.
  * PureCloud credentials.
  * A PureCloud OAuth client with the **Token Implicit Grant (Browser)** grant type selected.<br />
-   For more information, see [Create an OAuth client (Resource Center)](https://help.mypurecloud.com/?p=188023).
+   For more information, see [Create an OAuth client (Resource Center)](https://help.genesys.cloud/?p=188023).
 
 ## Installation
 
@@ -60,9 +60,9 @@ You can now interact with the PureCloud Embeddable Framework application.
       * **Deployment Environment**: Select the correct PureCloud Embeddable Framework deployment environment for your integration.
       * **Framework Name**: Add a unique name for your integration.
       * **PureCloud Environment**: Indicate the region where your PureCloud organization is located. <br />
-      For a list of values, see property names under [clientIds (Developer Center)](https://developer.mypurecloud.com/api/embeddable-framework/configMethods/clientIds.html).
+      For a list of values, see property names under [clientIds (Developer Center)](https://developer.genesys.cloud/api/embeddable-framework/configMethods/clientIds.html).
       * **PureCloud Client ID**: Add the Client ID from the OAuth client that you created in PureCloud. <br /> For more information about the OAuth client, see [Prerequisites](#prerequisites).<br /></ul>
-   c. (Optional) Edit the other fields. For more information about these fields, see the [PureCloud Embeddable Framework documentation](https://developer.mypurecloud.com/api/embeddable-framework/) in the Developer Center.<br />
+   c. (Optional) Edit the other fields. For more information about these fields, see the [PureCloud Embeddable Framework documentation](https://developer.genesys.cloud/api/embeddable-framework/) in the Developer Center.<br />
    d. To save your changes, click the disk icon.<br />
 5. Refresh your browser. The configuration changes now take effect.
 
@@ -77,4 +77,4 @@ You can now interact with the application and explore functionality in a PureClo
 
 This content is [licensed](/LICENSE) under the MIT license.
 
-For more information about PureCloud Embeddable Framework, see [PureCloud Embeddable Framework overview (Developer Center)](https://developer.mypurecloud.com/api/embeddable-framework/) and [About PureCloud Embeddable Framework (Resource Center)](https://help.mypurecloud.com/?p=196909).
+For more information about PureCloud Embeddable Framework, see [PureCloud Embeddable Framework overview (Developer Center)](https://developer.genesys.cloud/api/embeddable-framework/) and [About PureCloud Embeddable Framework (Resource Center)](https://help.genesys.cloud/?p=196909).
