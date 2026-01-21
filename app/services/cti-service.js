@@ -37,7 +37,7 @@ export default Service.extend({
             let partnerName = this.get('ctiSettingsService.settings.frameworkName');
             return `https://apps.${region}/crm/${partnerName}/interaction.html`;
         }else{
-            return `https://apps.${region}/crm/interaction.html`; 
+            return `https://apps.${region}/crm/interaction.html`;
         }
     }),
     postSettings: function(){
@@ -58,7 +58,7 @@ export default Service.extend({
             customInteractionAttributes: this.get('ctiSettingsService.screenPopAttributes'),
             name: this.get('ctiSettingsService.settings.frameworkName'),
             clientIds:{}
-            
+
         }
         if(this.get('ctiSettingsService.settings.customTheme')){
             payload.settings.theme = {
@@ -110,7 +110,7 @@ export default Service.extend({
                         screenPopAttributes.forEach(element => {
                             attributeMapping[element] = message.data.interaction.attributes[element];
                         });
-                        
+
                         if(attributeMapping.mystery_type == 'user'){
                             this.get('router').transitionTo('users.view', attributeMapping.mystery_id );
                         }else if(attributeMapping.mystery_type == 'issue'){
